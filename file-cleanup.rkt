@@ -7,8 +7,9 @@
 (provide file-cleanup)
 
 (define (file-cleanup)
-(if (file-exists? (build-path "./img"           (car (directory-list "./to_be_printed"))))
-    (delete-file  (build-path "./to_be_printed" (car (directory-list "./to_be_printed"))))
-    (copy-file    (build-path "./to_be_printed" (car (directory-list "./to_be_printed")))
-                  (build-path "./img"           (car (directory-list "./to_be_printed"))))))
+(if (file-exists? (build-path "./img"           (first (directory-list "./to_be_printed"))))
+    (copy-file    (build-path "./to_be_printed" (first (directory-list "./to_be_printed")))
+                  (build-path "./img"           (first (directory-list "./to_be_printed"))))
+    (delete-file  (build-path "./to_be_printed" (first (directory-list "./to_be_printed"))))
+   ))
 

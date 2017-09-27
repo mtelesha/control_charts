@@ -5,7 +5,7 @@
 (require 2htdp/image)
 (require "first-pic.rkt")
 
-   (provide image-maker)
+(provide image-maker)
 
 
 (define (image-maker)
