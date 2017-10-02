@@ -3,6 +3,7 @@
 ; We need three if else
 ; 1) does the file exist in ./img directory THEN delete in ./to_be_printed
 ; 2) does the file NOT exist in ./img then move to ./img
+; Works well
 
 (provide file-cleanup)
 
@@ -17,3 +18,4 @@
                                    (first (directory-list "./to_be_printed")))
                        (build-path "./img"           (first (directory-list "./to_be_printed"))))
          (delete-file  (build-path "./to_be_printed" (first (directory-list "./to_be_printed")))))]))
+
